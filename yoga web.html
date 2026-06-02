@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sutra | Traditional Indian Yoga</title>
+    <!-- Google Fonts for aesthetic typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <a href="#home" class="logo">SUTRA</a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#heritage">Heritage</a></li>
+            <li><a href="#styles">Styles</a></li>
+            <li><a href="#meditation">Dhyana</a></li>
+            <li><a href="#contact">Join</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="sanskrit">योगश्चित्तवृत्तिनिरोधः</div>
+        <h1>The Roots of Movement</h1>
+        <p>Yoga is the stilling of the changing states of the mind. Return to the source with practices rooted in ancient Indian heritage.</p>
+        <a href="#heritage" class="btn">Discover the Path</a>
+    </header>
+
+    <!-- Heritage Section -->
+    <section id="heritage">
+        <h2 class="section-title reveal">The Patanjali Tradition</h2>
+        <div class="heritage-container">
+            <div class="heritage-text reveal">
+                <p>Compiled around 400 CE by the sage Patanjali, the <strong>Yoga Sutras</strong> outline the eight limbs (Ashtanga) of yoga. Modern practice often focuses solely on <em>Asana</em> (physical postures), but true yoga encompasses ethical discipline, breath control, and deep meditation.</p>
+                <p>Our space is dedicated to preserving the sanctity of these Indian roots. We guide you not just to bend the body, but to observe the mind, clear energetic blockages, and align with your highest self.</p>
+            </div>
+            <div class="heritage-image reveal">
+                <!-- Unsplash placeholder of an aesthetic statue/temple -->
+                <img src="img 1.png">
+            </div>
+        </div>
+    </section>
+
+    <!-- Styles Section -->
+    <section id="styles" class="bg-secondary">
+        <h2 class="section-title reveal">Sacred Practices</h2>
+        <div class="styles-grid">
+            
+            <div class="style-card reveal">
+                <h3>Hatha Yoga</h3>
+                <p>The foundational practice. 'Ha' (Sun) and 'Tha' (Moon) represent the balance of opposing energies. This slower-paced class focuses on holding postures to build strength, alignment, and deep inner stillness.</p>
+            </div>
+
+            <div class="style-card reveal" style="transition-delay: 0.2s;">
+                <h3>Vinyasa Flow</h3>
+                <p>A dynamic evolution of traditional postures where movement is intimately synchronized with the breath (Pranayama). It creates a moving meditation that builds heat and purifies the body.</p>
+            </div>
+
+            <div class="style-card reveal" style="transition-delay: 0.4s;">
+                <h3>Ashtanga Vinyasa</h3>
+                <p>A rigorous, traditional sequence passed down by Sri K. Pattabhi Jois. It involves synchronizing the breath with a progressive series of postures to produce intense internal heat and a strong, purified body.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="meditation">
+        <h2 class="section-title reveal">Dhyana: The Art of Stillness</h2>
+        <div class="meditation-container reveal">
+            <div class="meditation-text">
+                <p>In the Patanjali Yoga Sutras, <em>Dhyana</em> (meditation) is the continuous flow of cognition toward the object of focus. It is the state where the observer, the process of observation, and the object being observed merge into complete awareness.</p>
+                <p>Take a moment to center yourself before you move on. Sync your breath with the expanding and contracting circle below to experience a brief moment of mindful stillness.</p>
+            </div>
+            
+            <div class="breathe-container">
+                <div class="breathe-circle"></div>
+                <span class="breathe-text">Breathe</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simple Call to Action / Contact -->
+    <section id="contact">
+        <h2 class="section-title reveal">Begin Your Journey</h2>
+        <div style="text-align: center; max-width: 600px; margin: 0 auto;" class="reveal">
+            <p style="margin-bottom: 30px; line-height: 1.6; font-size: 1.1rem;">Step onto the mat and reconnect with the ancient wisdom within. Join our daily practices led by teachers trained in the traditional Indian lineages.</p>
+            <a href="mailto:ppatel225@gmail.com" class="btn" style="color: var(--text-dark); border-color: var(--text-dark);">Book a Class</a>
+            <a href="callto:+919824626749" class="btn" style="color: var(--text-dark); border-color: var(--text-dark);">Call Us @ +919824626749</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h2 class="logo" style="margin-bottom: 10px; color: white;">SUTRA</h2>
+        <p>&copy; 2026 Sutra Yoga. Honoring the ancient lineages.</p>
+    </footer>
+
+    <!-- --- JAVASCRIPT --- -->
+    <script>
+        // 1. Navbar transparent-to-solid scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // 2. Smooth Scroll Reveal Animation for elements
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100; // when to trigger the animation
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        
+        // Trigger the reveal function on scroll and on load
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
+</body>
+</html>
