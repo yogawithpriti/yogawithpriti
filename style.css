@@ -300,3 +300,33 @@
             .nav-links { display: none; /* In a full build, add a hamburger menu here */ }
             nav { padding: 20px; }
         }
+/* Container to hold both buttons */
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between the buttons */
+    margin-top: 30px;
+}
+
+/* Base button styles (keeps your existing aesthetic) */
+.contact-buttons .btn {
+    color: var(--text-dark);
+    border-color: var(--text-dark);
+    text-align: center;
+    min-width: 150px; /* Ensures both buttons are roughly the same size */
+}
+
+/* --- THE MEDIA QUERY --- */
+/* This rule ONLY applies to screens smaller than 600px (like mobile phones) */
+@media (max-width: 600px) {
+    .contact-buttons {
+        flex-direction: column; /* Stacks the buttons vertically */
+        gap: 15px; /* Slightly reduces the space between them */
+        align-items: center;
+    }
+
+    .contact-buttons .btn {
+        width: 100%; /* Makes the buttons stretch cleanly across the phone screen */
+        max-width: 300px; /* Prevents them from getting absurdly wide on tablets */
+    }
+}
